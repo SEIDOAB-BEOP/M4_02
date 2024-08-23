@@ -65,7 +65,7 @@ namespace BEOPM4_02_07
 
         static string fname(string name)
         {
-            var documentPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            var documentPath = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
             documentPath = Path.Combine(documentPath, "BEOPM4", "Examples");
 
             if (!Directory.Exists(documentPath)) Directory.CreateDirectory(documentPath);

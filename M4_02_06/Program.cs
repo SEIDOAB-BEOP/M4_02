@@ -7,6 +7,7 @@ namespace BEOPM4_02_06
     {
         static void Main(string[] args)
         {
+            /*
             //Loop through all special folders
             Console.WriteLine("Special Folder exploration");
             foreach (Environment.SpecialFolder val in typeof(Environment.SpecialFolder).GetEnumValues())
@@ -14,10 +15,26 @@ namespace BEOPM4_02_06
                 Console.WriteLine($"{val, -25} {Environment.GetFolderPath(val)}");
             }
             Console.WriteLine();
-            Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
+            Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic));
             Console.WriteLine();
-            
-            
+            */
+            string p = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+            p = Path.Combine(p, "My favorites","today");
+            Console.WriteLine(p);
+
+            Console.WriteLine(Directory.Exists(p));
+            if (!Directory.Exists(p))
+            {
+                Directory.CreateDirectory(p);
+            }
+            Console.WriteLine(Directory.Exists(p));
+
+            /*
+            string pwd = Directory.GetCurrentDirectory();
+            Console.WriteLine(pwd);
+            */
+
+            /*
             //Explore the Path class
             Console.WriteLine("\nPath exploration");
             Console.WriteLine($"Volume separator:  {Path.VolumeSeparatorChar}");
@@ -39,6 +56,7 @@ namespace BEOPM4_02_06
             Console.WriteLine($"Directory name:    {Path.GetDirectoryName(mylog)}");
             Console.WriteLine($"File name:         {Path.GetFileName(mylog)}");
             Console.WriteLine($"File ext:          {Path.GetExtension(mylog)}");
+            */
         }
     }
 }
